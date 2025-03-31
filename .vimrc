@@ -131,6 +131,16 @@ nnoremap <C-n> :set rnu!<CR>
 " save read-only files
 command -nargs=0 Sudow w !sudo tee % >/dev/null
 
+" automatically adjusting cursor while typing paired sign
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap [ []<Left>
+inoremap < <><Left>
+inoremap { {}<Left><CR><BS><Esc>O
+
+" quickly jump to line's end
+nnoremap <C-e> $a
+
 "---------------------
 " Plugin configuration
 "---------------------
