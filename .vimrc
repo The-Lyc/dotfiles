@@ -1,5 +1,5 @@
-set nocompatible " not vi compatible
-
+set nocompatible " not vi compatible{
+   
 "------------------
 " Syntax and indent
 "------------------
@@ -135,8 +135,9 @@ command -nargs=0 Sudow w !sudo tee % >/dev/null
 inoremap ( ()<Left>
 inoremap " ""<Left>
 inoremap [ []<Left>
-inoremap < <><Left>
-inoremap { {}<Left><CR><BS><Esc>O
+inoremap <> <><Left>
+
+inoremap { {}<Left><CR><Esc>O
 
 " quickly jump to line's end
 nnoremap <C-e> $a
@@ -146,6 +147,7 @@ nnoremap <C-e> $a
 "---------------------
 
 call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
 Plug 'doums/darcula'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
