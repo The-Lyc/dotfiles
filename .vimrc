@@ -147,11 +147,18 @@ nnoremap <C-e> $a
 "---------------------
 
 call plug#begin('~/.vim/plugged')
+Plug 'maralla/completor.vim'
 Plug 'preservim/nerdtree'
 Plug 'doums/darcula'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 call plug#end()
+
+" completor
+let g:completor_clang_binary = '/usr/bin/clang'
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 colorscheme darcula
 set termguicolors
